@@ -20,7 +20,7 @@ const Table: React.FC = () => {
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
     const [selectedTable, setSelectedTable] = useState<string>("");
     
-    const [page,setPage] = useState(10);
+    const [page,setPage] = useState(15);
     
     useEffect(() => {
         axios.get(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=${page}`).then((res) => {
