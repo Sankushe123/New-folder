@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate,Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const Table: React.FC = () => {
     const [sortBy, setSortBy] = useState<string>("");
     const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
     const [selectedTable, setSelectedTable] = useState<string>("");
-    const [filterdata, setFilterdata] = useState<TableData[]>([])
+    
     const [page,setPage] = useState(10);
     
     useEffect(() => {
@@ -27,7 +27,7 @@ const Table: React.FC = () => {
             console.log('data received Sucessfully');
             console.log(res.data.results);
             setData(prev => [...prev, ...res.data.results]);
-            setFilterdata(res.data.results);
+            
         }).catch((err) => {
             console.log(err);
         })

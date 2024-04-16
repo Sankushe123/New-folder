@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
@@ -27,7 +27,6 @@ interface WeatherData {
 const Weatherpage = () => {
 
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   const { ascii_name } = useParams();
   const API_KEY = '9947bbb6f670a56fa43eef48a1ca473a';
@@ -47,9 +46,8 @@ const Weatherpage = () => {
         setWeatherData(response.data);
         console.log(response.data);
 
-        setError(null);
+        
       } catch (error) {
-        setError('Error fetching weather data');
         console.error('Error fetching weather data:', error);
       }
     };
