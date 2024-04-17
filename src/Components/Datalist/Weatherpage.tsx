@@ -30,7 +30,7 @@ const Weatherpage = () => {
 
   const { ascii_name } = useParams();
   const API_KEY = '9947bbb6f670a56fa43eef48a1ca473a';
-  const API_URL = 'http://api.openweathermap.org/data/2.5/weather';
+  const API_URL = '//api.openweathermap.org/data/2.5/weather';
 
   useEffect(() => {
 
